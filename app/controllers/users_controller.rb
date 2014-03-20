@@ -41,6 +41,7 @@ class UsersController < ApplicationController
 
   def show
     @cards = @user.cards.all
+    @my_card = @cards.map(&:card_name)
   end
 
   def load_user

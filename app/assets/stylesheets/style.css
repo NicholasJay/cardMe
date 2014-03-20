@@ -173,4 +173,24 @@ CARD FLIP
   border-radius: 20px;
 }
 
+.card {
+  width: 262px;
+  height: 150px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.card li{
+  list-style-type: none;
+}
+
+.edit li{
+  list-style-type: none;
+  float: left;
+  margin-top: 10px;
+  padding-right: 5px;
+  text-decoration: none;
+}
 

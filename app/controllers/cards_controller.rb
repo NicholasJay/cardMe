@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
-  before_action(:load_user, {only: [:create, :new, :edit, :update, :destroy, :user] })
-  before_action(:load_card, {only: [:edit, :update, :destroy] })
+  before_action(:load_user, {only: [:create, :new, :edit, :update, :destroy, :user, :show] })
+  before_action(:load_card, {only: [:edit, :update, :destroy, :show] })
   
   def index
     @group = Group.new
@@ -13,6 +13,7 @@ class CardsController < ApplicationController
   end
 
   def show
+    @cards = @user.cards.all
   end
 
   def update
