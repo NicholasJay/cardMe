@@ -49,24 +49,24 @@ function showGroups() {
     allGroups = response;
     $("ul.groups").empty();
     for(i = 0; i < allGroups.length; i++) {
-      ($("<li>" + allGroups[i].group_name + "</li>").append("<span>" + ' X ' + "</span>")).appendTo("ul.groups")
-    }
-  })
-}
-
-function deleteGroup() {
-  $("span").on("click", function(){
-    $.ajax({
-      url: '/users/' + <%= @user.id %> + '/groups/' + <%= @group.id %>,
-      type: "DELETE"
-    })
-    showGroups();
-  })
-}
+      ($("<li>" + allGroups[i].group_name + "</li>").append("<span id="+ allGroups[i].id + ">" + ' X ' + "</span>")).appendTo("ul.groups");
+    }// for loop ends
+    $("span").on("click", function(e){
+      var groupId = e.target.id;
+      $.ajax({
+        url: '/users/' + <%= @user.id %> + '/groups/' + groupId,
+        type: "DELETE",
+        success: function(){
+          e.target.parentElement.remove();
+        }
+      });
+      //ajax closed
+    })// ends listener
+  });// ends getJSON
+}// ends showGroups
 
 
 showGroups();
 addGroups();
-deleteGroup()
   
 </script>

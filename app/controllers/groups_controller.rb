@@ -13,8 +13,8 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    @user = current_user
-    @group = @user.groups.find(params[:id])
+    @group = Group.find(params[:id])
     @group.destroy
+    render json: @group
   end
 end
