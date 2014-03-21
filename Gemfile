@@ -38,6 +38,8 @@ gem 'twilio-ruby'
 
 gem 'aws-sdk'
 
+gem 'rmagick'
+
 gem "letter_opener", group: [:development, :test]
 
 # Use ActiveModel has_secure_password

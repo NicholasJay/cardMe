@@ -4,16 +4,20 @@
 
 <%= form_tag("/users/#{@user.id}/sms") do %>
   <%= text_field_tag 'phone' %>
+  <div class = "text">
   <%= label_tag("Select Card") %>
   <%= select_tag(:my_cards, options_for_select(@my_card)) %>
   <%= submit_tag "Text Card" %>
+  </div>
 <% end %>
 
 <%= form_tag(user_path(@user)) do %>
   <%= email_field_tag 'email' %>
+  <div class = "email">
   <%= label_tag("Select Card") %>
   <%= select_tag(:my_cards, options_for_select(@my_card)) %>
   <%= submit_tag "Email Card" %>
+  </div>
 <% end %>
 <div class="flash-message">
 <%= raw("<p><strong class='success'>#{flash[:notice]}</strong></p>") unless flash[:notice].nil? %>

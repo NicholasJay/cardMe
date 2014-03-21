@@ -11,6 +11,11 @@ Cardme::Application.routes.draw do
 
   get "/invite", to: "invites#show"
 
+  post "/invitesession", to: "session#newsession" 
+
+  get "/connections", to: "connections#index"
+  post "/connections", to: "connections#create"
+
   get "/login", to: "session#new"
   post "/session", to: "session#create"
   delete "/logout", to: "session#destroy"

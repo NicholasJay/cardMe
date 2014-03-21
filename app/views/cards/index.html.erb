@@ -10,6 +10,7 @@
 
 <% @connections.each do |connection| %>
   <%= connection.card.user.first_name %>
+  <%= connection.card.organization %>
 <% end %>
 
 
@@ -19,12 +20,6 @@
  end --> 
 </ul>
 
-<div class ="news-stories">
-  <% @nytarticles.each do |article| %>
-    <%= article["Title"] %>
-    <%= article["Url"] %>
-  <% end %>
-</div>
 
 
 <script>

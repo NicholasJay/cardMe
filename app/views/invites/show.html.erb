@@ -6,3 +6,19 @@
         <li><%= @card.position %></li>
       </ul>
     </div>
+
+
+    <% if current_user %>
+      <button> ADD ME </button>
+
+      <script>
+
+      $(".addbutton").on("click", function() {
+        $.post("/connections", {user: <%=current_user.id %>, card: <%= @card.id%>})
+      });
+      </script>
+    <% else %>
+     <%= render 'form' %>
+    <% end %>
+
+ 

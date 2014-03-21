@@ -1,0 +1,42 @@
+<form>
+  Email: <input type="email" name="email"><br>
+  Password: <input type="password" name="password">
+  <input type="submit" value="Log In">
+</form>
+
+
+<script>
+  $('form').on("submit", function(e){
+    e.preventDefault();
+    console.log("hello")
+    $.post('/session', {email: $("input[name='email']").val(), password: $("input[name='password']").val() }).done(function(response){
+          if (response.success === true){
+           
+            var addButton =  function(){
+                $("<button class ='addbutton'> ADD CARD </button>").appendTo("body");
+                $("form").remove();
+                $(".addbutton").on("click", function() {
+                  $.post("/connections", {user: response.id, card: <%= @card.id%>}).done(function(response_connection){
+                    if (response_connection.success ==true ){
+                      window.location = 'http://localhost:3000/users/' +response_connection.id + '/cards';
+                    }
+                  })
+                });
+              };
+
+            addButton();
+
+
+
+          } else {
+           
+          }
+         })
+         .error(function(response){
+           console.log("AJAX FAILED!");
+         });
+  })
+
+  
+
+</script>

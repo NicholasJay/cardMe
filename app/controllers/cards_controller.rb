@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   before_action(:load_user, {only: [:create, :new, :edit, :update, :user, :show] })
-  before_action(:load_card, {only: [:index, :edit, :update, :destroy, :show] })
+  before_action(:load_card, {only: [:edit, :update, :destroy, :show] })
   
   def index
     @group = Group.new
@@ -46,6 +46,13 @@ class CardsController < ApplicationController
   #   @articles = allarticles["response"]["docs"].map { |article| {"Title" => "#{article["snippet"]}", "Url" => "#{article["web_url"]}" }}
   # end
 
+
+# <div class ="news-stories">
+#   <% @nytarticles.each do |article| %>
+#     <%= article["Title"] %>
+#     <%= article["Url"] %>
+#   <% end %>
+# </div> 
 
 private
 
