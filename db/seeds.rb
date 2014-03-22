@@ -45,52 +45,52 @@ User.create(
   password_confirmation: "1234"
   )
 
-# Card.create(card_name: "freelance",
-#     organization: "business1",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
-# Card.create(card_name: "freelance",
-#     organization: "business2",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
-# Card.create(card_name: "freelance",
-#     organization: "business3",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
-# Card.create(card_name: "freelance",
-#     organization: "business4",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
-# Card.create(card_name: "freelance",
-#     organization: "business5",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
-# Card.create(card_name: "freelance",
-#     organization: "business6",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
-# Card.create(card_name: "freelance",
-#     organization: "business7",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
+Card.create(card_name: "freelance",
+    organization: "business1",
+    position:"leadperson",
+    phone_number: "913-355-5321"
+    )
+Card.create(card_name: "freelance",
+    organization: "business2",
+    position:"leadperson",
+    phone_number: "913-355-5321"
+    )
+Card.create(card_name: "freelance",
+    organization: "business3",
+    position:"leadperson",
+    phone_number: "913-355-5321"
+    )
+Card.create(card_name: "freelance",
+    organization: "business4",
+    position:"leadperson",
+    phone_number: "913-355-5321"
+    )
+Card.create(card_name: "freelance",
+    organization: "business5",
+    position:"leadperson",
+    phone_number: "913-355-5321"
+    )
+Card.create(card_name: "freelance",
+    organization: "business6",
+    position:"leadperson",
+    phone_number: "913-355-5321"
+    )
+Card.create(card_name: "freelance",
+    organization: "business7",
+    position:"leadperson",
+    phone_number: "913-355-5321"
+    )
 
-# Connection.create(user_id: 1, card_id: 3)
-# Connection.create(user_id: 1, card_id: 4)
-# Connection.create(user_id: 1, card_id: 5)
-# Connection.create(user_id: 1, card_id: 6)
-# Connection.create(user_id: 2, card_id: 7)
-# Connection.create(user_id: 3, card_id: 7)
-# Connection.create(user_id: 2, card_id: 7)
-# Connection.create(user_id: 4, card_id: 7)
-# Connection.create(user_id: 4, card_id: 7)
-# Connection.create(user_id: 5, card_id: 7)
+Connection.create(user_id: 1, card_id: 3)
+Connection.create(user_id: 1, card_id: 4)
+Connection.create(user_id: 1, card_id: 5)
+Connection.create(user_id: 1, card_id: 6)
+Connection.create(user_id: 2, card_id: 7)
+Connection.create(user_id: 3, card_id: 7)
+Connection.create(user_id: 2, card_id: 7)
+Connection.create(user_id: 4, card_id: 7)
+Connection.create(user_id: 4, card_id: 7)
+Connection.create(user_id: 5, card_id: 7)
 
 
 

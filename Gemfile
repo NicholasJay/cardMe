@@ -38,7 +38,9 @@ gem 'twilio-ruby'
 
 gem 'aws-sdk'
 
-gem 'rmagick'
+# gem 'rmagick'
+
+gem 'httparty'
 
 gem "letter_opener", group: [:development, :test]
 

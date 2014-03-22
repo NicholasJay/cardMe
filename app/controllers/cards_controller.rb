@@ -7,10 +7,9 @@ class CardsController < ApplicationController
     @user = current_user
     @groups = current_user.groups
     @connections = @user.connections
-
-  #   @nytarticles = news_stories(@card.organization)
-    @cards = @user.cards.all
-
+    @connection = @connections.find_by(card_id: 3)
+    @connection_card = Card.find(@connection.card_id)
+    @nytarticles = news_stories(@connection_card.organization)
   end
 
   def edit
@@ -44,18 +43,11 @@ class CardsController < ApplicationController
     params.require(:card).permit(:email, :card_name, :position, :organization, :phone_number, :user_id, :background_image, :ogranization_logo, :profile_picture)
   end
 
-  # def news_stories(organization)
-  #   allarticles = HTTParty.get("http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=#{organization}&api-key=#{NYTIMES_CLIENT_ID}")
-  #   @articles = allarticles["response"]["docs"].map { |article| {"Title" => "#{article["snippet"]}", "Url" => "#{article["web_url"]}" }}
-  # end
+  def news_stories(organization)
+    allarticles = HTTParty.get("http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=#{organization}&api-key=#{NYTIMES_CLIENT_ID}&begin_date=20130101")
+    articles = allarticles["response"]["docs"].map { |article| {"Title" => "#{article["snippet"]}", "Url" => "#{article["web_url"]}" }}
+  end
 
-
-# <div class ="news-stories">
-#   <% @nytarticles.each do |article| %>
-#     <%= article["Title"] %>
-#     <%= article["Url"] %>
-#   <% end %>
-# </div> 
 
 private
 
