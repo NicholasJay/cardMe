@@ -9,9 +9,19 @@ class CardsController < ApplicationController
     @connections = @user.connections
     @cards = @user.cards.all
     @all_cards = Card.all
-    @connection = @connections.find_by(card_id: 3)
-    @connection_card = Card.find(@connection.card_id)
-    @nytarticles = news_stories(@connection_card.organization)
+    #@connection = @connections.find_by(card_id: 3)
+    #@connection_card = Card.find(@connection.card_id)
+    #@nytarticles = news_stories(@connection_card.organization)
+
+
+## TO DO : PUT BACK IN CARDS INDEX
+#     <div class ="news-stories">
+#   <h1>News Stories</h1>
+#   <% @nytarticles.take(4).each do |article| %>
+#     <li><a href= "<%= article["Url"] %>"><%= article["Title"] %></a></li>
+#   <% end %>
+# </div> 
+
 
   end
 

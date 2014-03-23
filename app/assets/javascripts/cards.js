@@ -13,18 +13,18 @@ function addGroups() {
     });
     input.val("");
   showGroups();
-  listCards();
   });
 }
 
 function getConnections(){
   $.getJSON("/connections", function(response){
-    allConnections = response;
+    var allConnections = response;
     $("ul.connection-cards").empty();
       for(var i = 0; i < allConnections.length; i++){
         if(allConnections[i].user_id == localStorage["user_id"]) {
+          var connect = $("<div class='card' data-connection=" + allConnections[i].id + ">");
           $.getJSON("/cards/" + allConnections[i].card_id, function(cardFound) {
-            var connect = $("<div class='card' id=" + cardFound.id + "></div>");
+            connect.attr("id", cardFound.id);
             $("ul.connection-cards").append(connect);
             $("<li>" + cardFound.email + "</li>").appendTo(connect);
             $("<li>" + cardFound.phone_number + "</li>").appendTo(connect);
@@ -33,21 +33,45 @@ function getConnections(){
             $("<button id='add-group'> + </button>").appendTo(connect);
             $("#add-group").on("click", addCardToGroup);
           });
+          // group_id, card_id - pass into addCardToGroup
         }
       }
   });
 }
 
+// card_id - pass into addCardToGroup
+
 function addCardToGroup(){
-  console.log("CLICKED!");
-  var groups = $("body");
+  var groups = $(".card");
   $("<ul class='groups_popup'>").appendTo(groups);
   $.getJSON("/users/" + localStorage["user_id"] + "/groups", function(response){
     allGroups = response;
     for(var i = 0; i < allGroups.length; i++) {
-      $("<li>" + allGroups[i].group_name + "</li>").appendTo("ul.groups_popup").append($("<input type='checkbox'>"));
+      checkbox = $("<input type='checkbox'>");
+      $("<li id=" + allGroups[i].id + ">" + allGroups[i].group_name + "</li>").appendTo("ul.groups_popup").append(checkbox);
+      checkbox.on("change", selectGroup)
+      //card_id
+      
     }
   });
+}
+// group_id, card_id - pass into selectGroup
+function selectGroup() {
+  var group_id = $(this).parent().attr('id');
+  var connection_id = $(this).parent().parent().parent().attr("data-connection");
+  if(this.checked == true){
+    $.ajax({
+      url: "/groupsconnections",
+      data: {connection: connection_id, group: group_id},
+      type: "POST"
+    }); 
+  } else {
+    $.ajax({
+      url: "/groupsconnections",
+      data: {connection: connection_id, group: group_id},
+      type: "DELETE"
+    })
+  }
 }
 
 
