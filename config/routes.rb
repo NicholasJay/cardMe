@@ -24,5 +24,5 @@ Cardme::Application.routes.draw do
   post "/session", to: "session#create"
   delete "/logout", to: "session#destroy"
 
-  get "/card_news/:id", to: "cards#card_news"
+  get "/card_dashboard/:id", to: "cards#card_dashboard"
 end

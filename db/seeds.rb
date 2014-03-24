@@ -13,93 +13,77 @@
 # Group.destroy_all
 
 
-# User.create(
-#   email: "joe1@joey.com",
-#   first_name: "Joe1",
-#   last_name: "Joey",
+# jessica = User.create(
+#   email: "jessica@cardme.com",
+#   first_name: "Jessica",
+#   last_name: "S",
 #   password: "1234",
 #   password_confirmation: "1234"
 #   )
 
-# User.create(
-#   email: "joe2@joey.com",
-#   first_name: "Joe2",
-#   last_name: "Joey",
+# nick = User.create(
+#   email: "nick@cardme.com",
+#   first_name: "Nick",
+#   last_name: "B",
 #   password: "1234",
 #   password_confirmation: "1234"
 #   )
 
-# User.create(
-#   email: "joe3@joey.com",
-#   first_name: "Joe3",
-#   last_name: "Joey",
-#   password: "1234",
-#   password_confirmation: "1234"
-#   )
-# User.create(
-#   email: "joe4@joey.com",
-#   first_name: "Joe3",
-#   last_name: "Joey",
-#   password: "1234",
-#   password_confirmation: "1234"
-#   )
-# User.create(
-#   email: "joe5@joey.com",
-#   first_name: "Joe3",
-#   last_name: "Joey",
+# sandy = User.create(
+#   email: "sandy@cardme.com",
+#   first_name: "Sandy",
+#   last_name: "Sandy",
 #   password: "1234",
 #   password_confirmation: "1234"
 #   )
 
+# tai = User.create(
+#   email: "tai@cardme.com",
+#   first_name: "Tai",
+#   last_name: "A",
+#   password: "1234",
+#   password_confirmation: "1234"
+#   )
 
-# Card.create(card_name: "freelance",
+# dima = User.create(
+#   email: "dima@cardme.com",
+#   first_name: "Dima",
+#   last_name: "Dima",
+#   password: "1234",
+#   password_confirmation: "1234"
+#   )
 
-#     organization: "business1",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
-# Card.create(card_name: "freelance",
 
-#     organization: "business2",
+# card1 = Card.create(card_name: "CardMe",
+#     user: tai,
+#     organization: "Bain & Company",
+#     position:"developer",
+#     phone_number: "832-276-6765"
+#     )
+# card2 = Card.create(card_name: "Freelance",
+#     user: tai,
+#     organization: "Accenture",
 #     position:"leadperson",
 #     phone_number: "913-355-5321"
 #     )
-# Card.create(card_name: "freelance",
-
-#     organization: "business3",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
-# Card.create(card_name: "freelance",
-
-#     organization: "business4",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
-# Card.create(card_name: "freelance",
-#     organization: "business5",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
-# Card.create(card_name: "freelance",
-#     organization: "business6",
-#     position:"leadperson",
-#     phone_number: "913-355-5321"
-#     )
-# Card.create(card_name: "freelance",
-#     user_id: 3,
-#     organization: "business7",
+# card3 = Card.create(card_name: "freelance",
+#     user: nick,
+#     organization: "Carnival",
 #     position:"leadperson",
 #     phone_number: "913-355-5321"
 #     )
 
-# Connection.create(user_id: 3, card_id: 28)
-# Connection.create(user_id: 3, card_id: 29)
-# Connection.create(user_id: 4, card_id: 30)
-# Connection.create(user_id: 4, card_id: 31)
-# Connection.create(user_id: 2, card_id: 27)
-# Connection.create(user_id: 3, card_id: 26)
-# Connection.create(user_id: 2, card_id: 25)
+# card4 = Card.create(card_name: "freelance",
+#     user: jessica,
+#     organization: "Macy's",
+#     position:"leadperson",
+#     phone_number: "913-355-5321"
+#     )
+
+
+# Connection.create(user: tai , card: card3)
+# Connection.create(user: tai , card: card4)
+
 
 
 

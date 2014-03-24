@@ -3,6 +3,7 @@ class GroupsConnectionsController < ApplicationController
 
   def index
     @all_group_connections = ConnectionsGroups.all
+    render json: @all_group_connections
   end
 
   def create

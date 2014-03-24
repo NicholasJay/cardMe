@@ -1,14 +1,16 @@
 <%= render 'form' %>
 <div class="card">
-    <ul class="personal_info_list">
-      <li id="card_email"></li>
-      <li id="card_card_name"></li>
-      <li id="card_phone_number"></li>
-      <li id="card_organization"></li>
-      <li id="card_position"></li>
+  <div class="personal_info_list">
+    <ul>
+      <li id="card_email_list"></li>
+      <li id="card_card_name_list"></li>
+      <li id="card_phone_number_list"></li>
+      <li id="card_organization_list"></li>
+      <li id="card_position_list"></li>
     </ul>
+  </div>
 
-  <div class="card-profile-pic">
+  <div id="card-profile-pic">
   </div>
 </div>
 <div class="card_design_menu">
@@ -16,11 +18,11 @@
   <ul>
     <li class="profile-pic-menu">
       <h3>Choose profile picture position</h3>
-      <form action="">
-<input type="radio" name="position" value="right-top">right-top<br>
-<input type="radio" name="position" value="right-bottom">right-bottom<br>
-<input type="radio" name="position" value="right-bottom">left-top<br>
-<input type="radio" name="position" value="right-bottom">left-bottom<br>
+      <form id="profile-pic-menu-radio" action="">
+<input id="right-top" type="radio" name="position" value="right-top">right-top<br>
+<input id="right-bottom" type="radio" name="position" value="right-bottom">right-bottom<br>
+<input id="left-top" type="radio" name="position" value="left-top">left-top<br>
+<input id="left-bottom" type="radio" name="position" value="left-bottom">left-bottom<br>
 
 </form>
     </li>
@@ -30,28 +32,37 @@
 <script>
 var cardAttr;
 function listDetails() {
-  // $("<li>").appendTo(".personal_info_list")
     $("#card_email").keyup(function(){
-    $(".personal_info_list #card_email").text(this.value)
+    $(".personal_info_list #card_email_list").text(this.value)
     });
     $("#card_card_name").keyup(function(){
-    $(".personal_info_list #card_card_name").text(this.value)
+    $(".personal_info_list #card_card_name_list").text(this.value)
     });
     $("#card_phone_number").keyup(function(){
-    $(".personal_info_list #card_phone_number").text(this.value)
+    $(".personal_info_list #card_phone_number_list").text(this.value)
     });
     $("#card_organization").keyup(function(){
-    $(".personal_info_list #card_organization").text(this.value)
+    $(".personal_info_list #card_organization_list").text(this.value)
     });
     $("#card_position").keyup(function(){
-    $(".personal_info_list #card_position").text(this.value)
+    $(".personal_info_list #card_position_list").text(this.value)
     });
 }
 
 function profilePicPosition() {
-  
+  $("#profile-pic-menu-radio").on("change", function(){
+    if($("#right-top").prop('checked') === true){
+      document.getElementById("card-profile-pic").className = "card-profile-pic-right-top"
+    } else if($("#right-bottom").prop('checked') === true) {
+      document.getElementById("card-profile-pic").className = "card-profile-pic-right-bottom"
+    } else if($("#left-top").prop('checked') === true) {
+      document.getElementById("card-profile-pic").className = "card-profile-pic-left-top"
+    } else if($("#left-bottom").prop('checked') === true) {
+      document.getElementById("card-profile-pic").className = "card-profile-pic-left-bottom"
+    }
+  })
 }
   
-  
+profilePicPosition();  
 listDetails()
 </script>

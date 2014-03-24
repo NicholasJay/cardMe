@@ -23,8 +23,6 @@ Submit Group Name:
     <div class="showcard">
     </div>
 
-
-
     <div class="news-stories">
       <h2>News Stories</h2>
       <ul class ="articles">
@@ -32,8 +30,69 @@ Submit Group Name:
     </div>
   </div>
 
+<body class="dashboard">
+
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='#'><span>Roladex</span></a></li>
+   <li class='has-sub'><a href='#'><span>GA PPL</span></a>
+      <ul>
+         <li><a href='#'><span>Connection Card # 1</span></a></li>
+         <li><a href='#'><span>Connection Card # 2</span></a></li>
+         <li class='last'><a href='#'><span>Connection Card # 3</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Peeps</span></a>
+      <ul>
+         <li><a href='#'><span>Connection Card #1</span></a></li>
+         <li class='last'><a href='#'><span>Connection Card #2</span></a></li>
+      </ul>
+   </li>
+   <li class='last'><a href='#'><span>Other People</span></a></li>
+</ul>
+</div>
+
+<!--   <div id="group-form">
+    form_for [@user, @group] do |f|
+       f.text_field :group_name 
+       f.submit "Submit" 
+     end 
+  </div>
+ -->
+  <!-- <ul class="connection-cards">
+    <div class="groups">
+    <div>
+  </ul>
+
+  <ul class="groups">
+  </ul> -->
+
+  <div id='selected-card'>
+    selected card here
+  </div>
+
+<section id ='dashboard-right-top'>
+
+<div id='logo-box'>
+  logo here
+</div>
+
+</ul>
+<div id='company-info'>
+  <div id='company-info-header'>company info here</div> 
+</div>
+</section>
+
+</section>
 
 
+
+<section id='dashboard-right-bottom'>
+<div id='newsarticle'>
+  <div id='newsarticle-header'> news article here </div>
+  
+</div>
+</section>
   See your groups:
   <ul class="groups">
 
@@ -42,3 +101,4 @@ Submit Group Name:
   <%= javascript_include_tag "cards", "data-turbolinks-track" => true %>
 </div>
 
+</body>

@@ -12,6 +12,17 @@
     localStorage["user_id"] = <%= @user.id %>
     </script>
   <% end %>
+
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+
+  
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+  <script type='text/javascript' src='menu_jquery.js'></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type='text/javascript' src='/menu_source/menu_jquery.js'></script>
+
+
 </head>
 <body>
 
@@ -25,13 +36,23 @@
       </li>
 
     <li> <%= link_to("Log Out", "/logout", method: "delete") unless session[:user_id].nil? %>
+  <ul class="nav">
+    <li><%= link_to "Profile", user_path(session[:user_id]) unless session[:user_id].nil?%></li>
+    <li>
+     <%= link_to("Log Out", "/logout", method: "delete") unless session[:user_id].nil? %>
+
    </li>
   </ul>
 </header>
 
+<footer>
+
+</footer>
 
 
 <%= yield %>
+
+
 
 </body>
 </html>

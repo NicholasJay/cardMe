@@ -4,7 +4,7 @@ class Card < ActiveRecord::Base
   has_many :connections
   has_many :tokens
 
-    has_attached_file :background_image, :styles => {:cardsize => "50x100>"},
+    has_attached_file :background_image, :styles => {:cardsize => "150x262>"},
                     :storage => :s3,
                     :bucket => 'cardMe',
                     :s3_credentials => {
@@ -18,7 +18,7 @@ class Card < ActiveRecord::Base
                     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
                     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
                     }                    
-    has_attached_file :profile_picture, :styles => {:thumb => "50x50>"},
+    has_attached_file :profile_picture, :styles => {:thumb => "50x40>"},
                     :storage => :s3,
                     :bucket => 'cardMe',
                     :s3_credentials => {

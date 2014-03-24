@@ -10,15 +10,35 @@ body{
 }
 
 header{
+
+  position: absolute;
+  top: 0;
+  /*border-radius: 0px 0px 7px 7px;*/
+  height: 60px;
+  width: 100%;
+  background: rgb(62,62,64);
+  /*background: rgb(14,14,14); /* Old browsers */
+  /*background: -moz-linear-gradient(top,  rgba(14,14,14) 0%, rgba(125,126,125,1) 100%); /* FF3.6+ */
+  /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(14,14,14,1)), color-stop(100%,rgba(125,126,125,1))); /* Chrome,Safari4+ */
+  /*background: -webkit-linear-gradient(top,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 100%); /* Chrome10+,Safari5.1+ */
+  /*background: -o-linear-gradient(top,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 100%); /* Opera 11.10+ */
+  /*background: -ms-linear-gradient(top,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 100%); /* IE10+ */
+  /*background: linear-gradient(to bottom,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 100%); /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e0e0e', endColorstr='#7d7e7d',GradientType=0 ); /* IE6-9 */
+}
+
+
+/*header{
   height: 70px;
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   background-color: #363636;
   -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.75);
   box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.75);
 }
+*/
 
 
 nav {
@@ -29,6 +49,7 @@ nav .topnav{
   list-style-type: none;
   position: relative;
   display: inline-block;
+  margin: 10px;
 }
 
 nav .topnav li{
@@ -57,6 +78,19 @@ nav .topnav .dropdown{
   top: 100%;
   display: none;
 }
+
+.nav{
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}
+
+.nav li a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  display: inline-block;
+  float: left;
 
 nav .topnav li:hover > ul{
   display: block;
@@ -93,6 +127,9 @@ body{
   height: 1000px;
   margin-top: -40px;
   font-family: 'Muli', sans-serif;
+
+.welcomepage{
+  margin-top: 50px;                                  
 }
 
 .description{
@@ -301,12 +338,13 @@ CARD FLIP
   padding: 20px;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: white;
+  /*background-color: green;*/
 }
 
 
 .card li{
   list-style-type: none;
+  color: black;
 }
 
 .edit li{
@@ -318,21 +356,24 @@ CARD FLIP
   text-decoration: none;
 }
 
+.personal_info_list {
+  float: left;
+}
 
 .card-profile-pic-right-top {
-  border: 1px solid black;
+  border: 1px solid green;
   height: 50px;
-  width: 40px;
+  width: 50px;
   float: right;
 }
 
 
 .card-profile-pic-right-bottom {
-  border: 1px solid black;
-  height: 50px;
-  width: 40px;
+  border: 1px solid green;
+  height: 90px;
+  width: 75px;
   float: right;
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 .card-profile-pic-left-top {
@@ -437,12 +478,85 @@ USER PROFILE PAGE
 DASHBOARD
 *****************/
 
+body.dashboard{
+  background-color: rgb(211,212,214);
+}
+
+#cssmenu{
+  display: inline-block;
+}
+
 .news-stories{
   border: 1px solid black;
   border-radius: 10px;
   padding: 20px;
+}
+
+#group-form{
+  display: inline-block;
+  width: 300px;
+  height: 600px;
+  border: 2px solid black;
+  margin-left: 30px;
+}
+#newsarticle{
+/*  border: 1px solid red;*/
+  width: 800px;
+  height: 340px;
+  display: inline-block;
+  background: rgb(242,243,245);
+  position: relative;
+  left: 310px;
+}
+
+#newsarticle-header{
+  height: 40px;
+  background:rgb(62,62,64);
+  color: white;
+  text-align: center;
+}
+
+#selected-card{
+/*  border: 1px solid orange;*/
+  width: 400px;
+  height: 300px;
+  display: inline-block;
+  background: white;
+  text-align: center;
+/*  margin-left: 250px;
+  margin-top: 10px ;*/
+  position: relative;
+  bottom: 155px;
+  right: -250px;
+
+}
+
+
+
+#logo-box{
+/*  border: 1px solid pink;*/
+  width: 250px;
+  height: 250px;
+  display: inline-block;
+  background: white;
+  position: relative;
+  right: -300px;
+  top: -95px;
+
+ 
+}
+
+
+#company-info{
+/*  border: 1px solid green;*/
+  width: 500px;
+  height: 300px;
+  display: inline-block;
+  background: rgb(242,243,245);
   float: right;
-  width: 40%;
+  margin-right: 30px;
+  margin-top: -120px;
+
 }
 .right-side-dashboard{
   float: right;
@@ -570,4 +684,10 @@ DASHBOARD
   width: 100%;
   margin-top: 100px;
   margin-left: 30px;
+
+#company-info-header{
+  height: 40px;
+  background:rgb(62,62,64);
+  color: white;
+  text-align: center;
 }
