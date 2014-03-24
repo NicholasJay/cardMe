@@ -11,7 +11,6 @@ class CardsController < ApplicationController
     @all_cards = Card.all
   end
 
-
   def edit
     
   end

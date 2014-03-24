@@ -18,7 +18,7 @@ class Card < ActiveRecord::Base
                     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
                     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
                     }                    
-    has_attached_file :profile_picture, :styles => {:thumb => "50x40>"},
+    has_attached_file :profile_picture, :styles => {:thumb => "50x50>"},
                     :storage => :s3,
                     :bucket => 'cardMe',
                     :s3_credentials => {
